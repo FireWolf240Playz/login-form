@@ -32,7 +32,7 @@ function App() {
       <GlobalStyles />
       <StyledApp>
         {status === "sign-in" && <LoginForm />}
-        {status === "loading" && <Spinner />}
+        {status === "loading" && <Spinner data-testid="spinner" />}
         {status === "signed-in" && <WelcomeBox />}
         {status === "failed" && <LoginUnsuccessful onRetry={handleRetry} />}
       </StyledApp>

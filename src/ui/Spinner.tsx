@@ -9,7 +9,7 @@ const rotation = keyframes`
     }
 `;
 
-const Spinner = styled.div`
+const Spinner = styled.div<{ "data-testid"?: string }>`
   width: 48px;
   height: 48px;
   border: 5px solid #fff;

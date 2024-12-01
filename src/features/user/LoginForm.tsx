@@ -2,7 +2,7 @@ import Checkbox from "../../ui/Checkbox";
 import Heading from "../../ui/Heading";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import FormRow from "../../ui/FormRow";
+import FormRow, { Error } from "../../ui/FormRow";
 import Form from "../../ui/Form";
 
 import { useLocalStorageSync } from "../../hooks/useLocalStorageSync";
@@ -11,6 +11,7 @@ import { SubmitHandler } from "react-hook-form";
 import { logInUser } from "./userThunks";
 
 import { useAppDispatch } from "../../store";
+import { useState } from "react";
 
 export interface LoginForm {
   username: string;
@@ -36,8 +37,13 @@ function LoginForm() {
       );
     } catch (err) {
       console.error(err);
+      setErrorMessage(
+        (err as Error).message || "An unexpected error occurred.",
+      );
     }
   };
+
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -79,7 +85,7 @@ function LoginForm() {
       </FormRow>
 
       <Checkbox label="Remember me" id="rememberMe" register={register} />
-
+      {errorMessage && <Error>{errorMessage}</Error>}
       <Button>Log in now</Button>
     </Form>
   );
