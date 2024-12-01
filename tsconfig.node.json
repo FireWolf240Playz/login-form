@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "ES2022",
+    "lib": ["ES2023", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": false,
+    "strict": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*", "jest.setup.ts", "vite.config.ts"]
+}

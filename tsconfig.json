@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // Ensures JSX is enabled for React
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022", "dom"], // Enables DOM-specific types for React
+    "moduleResolution": "node",
+    "esModuleInterop": true, // Resolves import compatibility issues
+    "allowSyntheticDefaultImports": true, // Simplifies importing modules
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+  },
+  "include": ["src/**/*", "tests/**/*"]
+}
