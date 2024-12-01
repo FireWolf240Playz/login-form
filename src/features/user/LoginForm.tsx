@@ -66,6 +66,7 @@ function LoginForm() {
       <FormRow error={errors?.password?.message as string | undefined}>
         <Input
           id="password"
+          type="password"
           placeholder="Password"
           {...register("password", {
             required: "This field is required",
