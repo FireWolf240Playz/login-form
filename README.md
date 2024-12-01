@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app built with **React**, **TypeScript**, **Redux**, and **Styled-components**.
+## Tech Stack 🛠️
 
-Currently, two official plugins are available:
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Type-safe JavaScript, providing static types to catch errors during development.
+- **Redux**: State management library for managing the global state.
+- **Styled-components**: CSS-in-JS tool for styling React components.
+- **Vite**: Build tool that provides a fast development experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features 📝
 
-## Expanding the ESLint configuration
+- **React**: Fully functional UI using React components.
+- **TypeScript**: Type safety throughout the application.
+- **Redux**: Global state management for shared data.
+- **Styled-components**: Scoped styling using tagged template literals and responsive design.
+- **Fast Refresh**: Thanks to Vite, changes are reflected in real-time with Hot Module Replacement (HMR).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How To Run Locally 💻
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Node.js** and **npm** must be installed on your machine. You can download them from [here](https://nodejs.org/).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Steps to Run
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Clone the repository**:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   git clone https://github.com/FireWolf240Playz/login-form.git
+   cd your-repository
+
+2. **Install dependacies**
+    ```bash
+    npm install
+
+4. **Run the app**
+    ```bash
+    npm run dev
+
+### Key Sections:
+
+- **Tech Stack**: Lists React, TypeScript, Redux, and Styled-components.
+- **State Management (Redux)**: A brief explanation of how Redux is set up in the project using `@reduxjs/toolkit`, including an example of a Redux slice and how to use `useDispatch` and `useSelector`.
+- **Styled-components**: Shows how to style components using `styled-components` and how to implement a theme with `ThemeProvider`.
+- **Running Tests**: Mentions Jest as the testing library and provides setup instructions.
+- **How to Run Locally**: Provides steps to clone, install dependencies, and run the app.
+
+   
