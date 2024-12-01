@@ -34,7 +34,6 @@ describe("LoginForm", () => {
   test("displays an error for invalid email format", async () => {
     renderWithProviders(<App />);
 
-    // Enter invalid email
     await userEvent.type(
       screen.getByPlaceholderText("Username"),
       "invalid-email",
@@ -84,21 +83,16 @@ describe("LoginForm", () => {
       json: async () => ({ message: "Invalid credentials" }),
     });
 
-    // Provide the preloaded state to simulate the "sign-in" state
     renderWithProviders(<App />);
 
-    // Wait for the login form inputs to appear
     const usernameInput = await screen.findByPlaceholderText("Username");
     const passwordInput = await screen.findByPlaceholderText("Password");
 
-    // Type in invalid credentials
     await userEvent.type(usernameInput, "testuser@example.com");
     await userEvent.type(passwordInput, "wrongpassword");
 
-    // Submit the form
     await userEvent.click(screen.getByRole("button", { name: /Log in now/i }));
 
-    // Wait for the failure message to appear
     await waitFor(() => {
       expect(screen.getByText(/Invalid credentials/i)).toBeInTheDocument();
     });
