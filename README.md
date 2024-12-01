@@ -28,13 +28,15 @@ A React app built with **React**, **TypeScript**, **Redux**, and **Styled-compon
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/FireWolf240Playz/login-form.git
    cd your-repository
 
 2. **Install dependacies**
+    ```bash
     npm install
 
-3. **Run the app**
+4. **Run the app**
+    ```bash
     npm run dev
 
 ### Key Sections:
