@@ -39,8 +39,9 @@ const userSlice = createSlice({
           state.error = null;
         },
       )
-      .addCase(logInUser.rejected, (state) => {
+      .addCase(logInUser.rejected, (state, action) => {
         state.status = "failed";
+        state.error = action.error.message || "An error occurred.";
       })
       .addCase(logOutUser.pending, (state) => {
         state.status = "loading";

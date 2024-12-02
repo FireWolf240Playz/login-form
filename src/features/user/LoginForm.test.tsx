@@ -77,24 +77,36 @@ describe("LoginForm", () => {
   });
 
   test("displays error if login fails", async () => {
-    // Mock a failed login response
     (global.fetch as jest.Mock).mockResolvedValueOnce({
       ok: false,
       json: async () => ({ message: "Invalid credentials" }),
     });
 
-    renderWithProviders(<App />);
+    renderWithProviders(<App />, {
+      preloadedState: {
+        user: {
+          username: "",
+          status: "sign-in",
+          error: null,
+        },
+      },
+    });
 
-    const usernameInput = await screen.findByPlaceholderText("Username");
-    const passwordInput = await screen.findByPlaceholderText("Password");
-
-    await userEvent.type(usernameInput, "testuser@example.com");
-    await userEvent.type(passwordInput, "wrongpassword");
+    await userEvent.type(
+      screen.getByPlaceholderText("Username"),
+      "testuser@test.com",
+    );
+    await userEvent.type(
+      screen.getByPlaceholderText("Password"),
+      "wrongpassword",
+    );
 
     await userEvent.click(screen.getByRole("button", { name: /Log in now/i }));
 
     await waitFor(() => {
-      expect(screen.getByText(/Invalid credentials/i)).toBeInTheDocument();
+      expect(screen.getByText("🚫 Wrong credentials")).toBeInTheDocument();
     });
+
+    expect(screen.getByRole("button", { name: /Retry/i })).toBeInTheDocument();
   });
 });
