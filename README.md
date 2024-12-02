@@ -1,4 +1,4 @@
-# Project Name
+# Login form
 
 A React app built with **React**, **TypeScript**, **Redux**, and **Styled-components**.
 ## Tech Stack 🛠️
